@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from calorie.views import GetCalorie
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', GetCalorie.as_view(template_name='calorie/index.html'), name='Calorie Finder'),
 ]
