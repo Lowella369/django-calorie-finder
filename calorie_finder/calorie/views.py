@@ -1,9 +1,12 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from .forms import FoodCalorieForm
 
-# Create your views here.
-
-class GetCalorie(TemplateView):
-    template_name = 'calorie/index.html'
-    def get_context_data(self, *args, **kwargs):
-        pass
+def food(request):
+  search_result = {}
+  if 'word' in request.GET:
+    form = FoodCalorieForm(request.GET)
+    if form.is_Valid()
+      search_result = form.search()
+  else:
+    form = FoodCalorieForm()
+  return render(request, 'templates/calorie/index.html', {'form': form, 'search_result': search_result})
