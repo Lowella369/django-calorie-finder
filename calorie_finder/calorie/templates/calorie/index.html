@@ -1,47 +1,68 @@
-<!DOCTYPE html>
-<head>
-  <title>Calorie Finder</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="/calorie_finder/css/style.css" rel="stylesheet">
-</head>
-<body>
+{% extends 'calorie/base.html' %}
+{% block content %}
+{% if search_result %}
+ {% if search_result == False %}  
+  <p class="message"> {{ search_result.message }}</p>
+ {% else %}
   <div class="container">
-	  <nav class="navbar navbar-expand-lg navbar-light bg-success">
-		  <a class="navbar-brand" href="index.html">Calorie Finder</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-			  <ul class="nav navbar-nav ml-auto">
-				  <li class="nav-item active">
-					  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-					</li>
-				</ul>
+	 <div class="row">
+		<div class="col-sm">
+		 <div class="col-sm-6">
+			<div class="image">
+			 <img src="{{ search_result.img.highres }}" alt="{{ search_result.name }}" class="img img-responsive full-width"/>
 			</div>
-		</nav>
-		<div class="search jumbotron">
-		  <div class="searchText">Find something to cook</div>
-			<!-- Search Form-->
-			<form class="form-inline d-flex justify-content-center md-form form-sm active-teal-2 mt-2">
-			  <div class="input-group col-sm-12">
-				  <input class="form-control py-2" type="search" placeholder="" id="search_input">
-					<span class="input-group-append">
-					  <button class="btn btn-outline-secondary" type="button">
-						  <i class="fa fa-search"></i>
-						</button>
-					</span>
-				</div>
-			</form>
+		 </div>
+		  <p> {{ search_result.name }}</p>
 		</div>
-		<div class="body-container">
-		  <div class="row">
-			  <div class="col-sm mx-1 my-1">1</div>
+	  <div class="col-md">
+		 <div class="info-label">Nutrition Label</div>
+		 <div class="nutri-row">
+			 <div class="row">
+				<div class="col-8 col-sm-6">Serving Size: {{ search_result.serving_qty }} {{ search_result.serving_unit }}</div>
+			 </div>
+			 <div class="row">
+				<div class="col-8 col-sm-6">Calories</div>
+				<div class="col-4 col-sm-6">{{ search_result.calories }}</div>
+			 </div> 
+			 <div class="row">
+				<div class="col-8 col-sm-6"></div>
+			  <div class="col-4 col-sm-6">% Daily Value</div>
+			 </div>
+			 <div class="row">
+				<div class="col-8 col-sm-6">Total Fat {{ search_result.total_fat }}</div>
+			  <div class="col-4 col-sm-6">{{ search_result.fat_daily_percent }}</div>
+			 </div>
+			 <div class="row">
+				<div class="col-8 col-sm-6">Saturated Fat: {{ search_result.sat_fat }}</div>
+				<div class="col-4 col-sm-6">{{ search_result.sat_fat_daily_percent }}</div>
+			 </div>
+			 <div class="row">
+				<div class="col-8 col-sm-6">Cholesterol: {{ search_result.cholesterol }}</div>
+				<div class="col-4 col-sm-6">{{ search_result.cholesterol_daily_percent }}</div>
+			 </div>
+			 <div class="row">
+				<div class="col-8 col-sm-6">Sodium: {{ search_result.sodium }}</div>
+				<div class="col-4 col-sm-6">{{ search_result.sodium_daily_percent }}</div>
+			 </div>
+			 <div class="row">
+				<div class="col-8 col-sm-6">Total Carbohydrate: {{ search_result.total_carbohydrate }}</div>
+				<div class="col-4 col-sm-6">{{ search_result.carbs_daily_percent }}</div>
+			 </div>
+			 <div class="row">
+				<div class="col-8 col-sm-6">Dietary Fiber: {{ search_result.dietary_fiber }}</div>
+				<div class="col-4 col-sm-6">{{ search_result.fiber_daily_percent }}</div>
+			 </div>
+			 <div class="row">
+				<div class="col-8 col-sm-6">Sugar: {{ search_result.sugar }}</div>
+			 </div>
+			 <div class="row">
+				<div class="col-8 col-sm-6">Protein: {{ search_result.protein }}</div>
+			 </div>
 			</div>
+		 </div>
 		</div>
-  </div>
-</body>
-</html>
+	 </div>
+	</div>
+ {% endif %}
+{% endif %}
+{% endblock %}
