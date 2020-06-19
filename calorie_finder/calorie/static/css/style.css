@@ -42,14 +42,14 @@ img {
  transform: translateX(-50%) translateY(-50%);
 }
 .nutri-row {
-	border: .1rem solid #CCC;
+ border: .1rem solid #CCC;
 }
 .info-label {
-	text-align: center;
-	border: .1rem .1rem 0 .1rem solid #999;
+ text-align: center;
+ border: .1rem .1rem 0 .1rem solid #999;
 }
 .message {
-	color: #2BAE66FF;
-	font-size: 1rem;
-	margin-left: 1rem;
+ color: #2BAE66FF;
+ font-size: 1rem;
+ margin-left: 1rem;
 }
