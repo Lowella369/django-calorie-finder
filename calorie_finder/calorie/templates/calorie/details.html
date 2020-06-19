@@ -1,51 +1,5 @@
-<!DOCTYPE html>
-<head>
-  <title>Calorie Finder</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="/calorie_finder/css/style.css" rel="stylesheet">
-</head>
-<body>
-  <div class="container">
-	  <nav class="navbar navbar-expand-lg navbar-light bg-success">
-      <a class="navbar-brand" href="#">Calorie Finder</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Sign-In</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Join</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-		<div class="search jumbotron">
-		  <div>Find something you want to cook
-			<!-- Search Form-->
-			<form class="form-inline d-flex justify-content-center md-form form-sm active-teal-2 mt-2">
-			  <div class="input-group col-sm-12">
-				  <input class="form-control py-2" type="search" placeholder="" id="search_input">
-					<span class="input-group-append">
-					  <button class="btn btn-outline-secondary" type="button">
-						  <i class="fa fa-search"></i>
-						</button>
-					</span>
-				</div>
-			</form>
-			</div>
-		</div>
-		<div class="body-container">
-		</div>
-	</div>
-</body>
-</html>
+{% extends 'calorie/base.html' %}
+
+{% block content %}
+<p>Detail</p>
+{% endblock %}
