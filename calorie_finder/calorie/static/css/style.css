@@ -1,55 +1,94 @@
 body {
- font-family: Bahnschrift;
+	font-family: Bahnschrift;
 }
 .searchText {
- color: whitesmoke;
- font-size: 25px;
- text-align: center;
+	color: whitesmoke;
+  font-size: 25px;
+  text-align: center;
+
 }
 .search-box {
- background-color: #2BAE66FF;
- padding: 3rem;
+  background-color: #2BAE66FF;
+  padding: 3rem;
+  margin-bottom: 4rem;
 }
 img {
- padding: 1rem;
- border: solid 1px #EFEFEF;
- border: solid 1px #CCC;
- box-shadow: 1px 1px 5px #999;
+	padding: 1rem;
+	border: solid 1px #EFEFEF;
+  border: solid 1px #CCC;
+  box-shadow: 1px 1px 5px #999;
 }
 .container {
- margin-top: 5rem;
- margin-bottom: 5rem;
- padding: 3rem;
- border: solid .1rem #2ec4b6;
- box-shadow: .2rem .2rem 0px #2BAE66FF;
+  border: solid .1rem #4eb85b;
+  box-shadow: .2rem .2rem 0px #4eb85b;
 }
 .footer { 
- padding: 1rem;
- text-align: center;
- border-top: solid .2rem #2BAE66FF;
+  margin-top: 4rem;
+  padding: 1rem;
+  text-align: center;
+  border-top: solid .2rem #2BAE66FF;
 }
 .image{
- position:relative;
- overflow:hidden;
- padding-bottom:100%;
+  position:relative;
+  overflow:hidden;
+  padding-bottom:100%;
+  margin-top: 5rem;
+  margin-left: 5rem;
 }
 .image img{
- position: absolute;
- max-width: 100%;
- max-height: 100%;
- top: 50%;
- left: 50%;
- transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 .nutri-row {
- border: .1rem solid #CCC;
+  border: .1rem solid #CCC;
 }
 .info-label {
- text-align: center;
- border: .1rem .1rem 0 .1rem solid #999;
+  text-align: center;
+  border: .1rem .1rem 0 .1rem solid #999;
 }
 .message {
- color: #2BAE66FF;
- font-size: 1rem;
- margin-left: 1rem;
+  color: #2BAE66FF;
+  font-size: 2rem;
+  margin-left: 1rem;
+  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.food-name {
+	margin-left: 5rem;
+	color: #358467;
+	font-weight: bolder;
+}
+.nutri-label {
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: strong;
+	background-color: #358467;
+	color: whitesmoke;
+}
+.btn-style {
+	border: .01rem solid #078282FF;
+	background-color: #9ED9CCFF;
+}
+.daily-value {
+	text-align: right;
+}
+.rows {
+	border-bottom: .1rem solid #DCDCDC;
+	height: 2.9rem;
+	padding-top: .5rem;
+	color: #358467;
+	font-size: 1rem;
+}
+.nutri-info {
+	border: .1rem solid #DCDCDC;
+	margin: 2rem 2rem 2rem;
+}
+.space-indent {
+	margin-left: 1rem;
+	font-style: italic;
 }
