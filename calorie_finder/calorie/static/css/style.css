@@ -16,7 +16,7 @@ body {
   margin-top: 1rem;
   padding: 1rem;
   text-align: center;
-  border: solid .2rem #2BAE66FF;
+  border-top: solid .2rem #2BAE66FF;
 }
 .message {
   color: #2BAE66FF;
