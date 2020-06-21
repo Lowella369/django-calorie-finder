@@ -7,7 +7,7 @@
 Link: 
 
 **Functionality:** 
-1. Enter the name of the food in the input box and hit submit button. You can only search one food at a time.
+* Enter the name of the food in the input box and hit submit button. Please take note that you can only search one food at a time.
 
 **Technologies Used:** Python 3.8.3, Django 3.0, Bootstrap 4, CSS3 and HTML 5
 
