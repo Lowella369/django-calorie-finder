@@ -1,54 +1,22 @@
 body {
-	font-family: Bahnschrift;
+  font-family: Bahnschrift;
+  color: #358467;
 }
 .searchText {
-	color: whitesmoke;
-  font-size: 25px;
+  color: whitesmoke;
+  font-size: 1.2 rem;
   text-align: center;
-
 }
 .search-box {
   background-color: #2BAE66FF;
   padding: 3rem;
-  margin-bottom: 4rem;
+  margin-bottom: .5rem;
 }
-img {
-	padding: 1rem;
-	border: solid 1px #EFEFEF;
-  border: solid 1px #CCC;
-  box-shadow: 1px 1px 5px #999;
-}
-.container {
-  border: solid .1rem #4eb85b;
-  box-shadow: .2rem .2rem 0px #4eb85b;
-}
-.footer { 
-  margin-top: 4rem;
+.footer {
+  margin-top: 1rem;
   padding: 1rem;
   text-align: center;
-  border-top: solid .2rem #2BAE66FF;
-}
-.image{
-  position:relative;
-  overflow:hidden;
-  padding-bottom:100%;
-  margin-top: 5rem;
-  margin-left: 5rem;
-}
-.image img{
-  position: absolute;
-  max-width: 100%;
-  max-height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-.nutri-row {
-  border: .1rem solid #CCC;
-}
-.info-label {
-  text-align: center;
-  border: .1rem .1rem 0 .1rem solid #999;
+  border: solid .2rem #2BAE66FF;
 }
 .message {
   color: #2BAE66FF;
@@ -59,36 +27,76 @@ img {
   padding-bottom: 5rem;
 }
 .food-name {
-	margin-left: 5rem;
-	color: #358467;
-	font-weight: bolder;
-}
-.nutri-label {
-	text-align: center;
-	font-size: 1.5rem;
-	font-weight: strong;
-	background-color: #358467;
-	color: whitesmoke;
+  color: #358467;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 .btn-style {
-	border: .01rem solid #078282FF;
-	background-color: #9ED9CCFF;
+  border: solid .01rem #078282FF;
+  background-color: #9ED9CCFF;
 }
-.daily-value {
-	text-align: right;
+.nutri-container {
+  border: solid .1rem #DCDCDC;
+  margin-top: 2rem;
 }
-.rows {
-	border-bottom: .1rem solid #DCDCDC;
-	height: 2.9rem;
-	padding-top: .5rem;
-	color: #358467;
-	font-size: 1rem;
+.container {
+  border: solid .1rem #4eb85b;
+  box-shadow: .2rem .2rem 0 #4eb85b;
+  padding: 1.5rem;
 }
-.nutri-info {
-	border: .1rem solid #DCDCDC;
-	margin: 2rem 2rem 2rem;
+.nutri-rows {
+  height: 2.8rem;
+  border-bottom: solid .1rem #DCDCDC;
+  height: 2.9rem;
+  padding-top: .5rem;
+  color: #358467;
+  font-size: 1rem;
 }
-.space-indent {
-	margin-left: 1rem;
-	font-style: italic;
+.nutri-header {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: strong;
+  background-color: #358467;
+  color: #e8e8e8;
+  height: 2.8rem;
+  padding-top: .3rem;
+}
+.image {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100%;
+}
+.image img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: .2rem;
+  border: solid .2rem #CCC;
+  width: 25rem;
+  height: 28rem;
+}
+.nutri-value {
+  font-weight: normal;
+  margin-left: 1rem;
+}
+.nutri-value {
+  font-weight: normal;
+  margin-left: 1rem;
+}
+.row-container {
+  padding: 0 2rem 2rem 2rem;
+}
+@media only screen and (min-width: 768px) {
+  .search-box {
+    margin-bottom: 4rem;
+  }
+  .searchText {
+    font-size: 2rem;
+  }
+  .footer {
+    margin-top: 4rem;
+  }
 }
