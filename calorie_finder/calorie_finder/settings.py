@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from decouple import config
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,10 +22,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 't8(cz9^!23z#$2pc%nva%j3_edbtn#vy@tk_5c^#y^#u*#lo71'
+#SECRET_KEY = 't8(cz9^!23z#$2pc%nva%j3_edbtn#vy@tk_5c^#y^#u*#lo71'
+SECRET_KEY = os.environ.get('CALORIE_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -123,3 +125,6 @@ STATIC_URL = '/static/'
 
 APP_ID = config('APP_ID', default='')
 APP_KEY = config('APP_KEY', default='')
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
