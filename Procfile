@@ -1,1 +1,1 @@
-web: gunicorn calorie-finder.wsgi
+web: gunicorn calorie_finder.wsgi
