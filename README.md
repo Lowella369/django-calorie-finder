@@ -2,14 +2,16 @@
 
 **Name: Lowella Fox**
 
-**Description:** Calorie Finder is a python django based application.  That allows you to search and check the calorie and nutrition information of any foods.
+**Description:** 
+* Calorie Finder is a python django based application that consumes the Nutritionix API (https://developer.nutritionix.com/). It allows user to search and check the calories and nutrition information of any foods.
 
 Link: 
 
 **Functionality:** 
 * Enter the name of the food in the input box and hit submit button. Please take note that you can only search one food at a time.
 
-**Technologies Used:** Python 3.8.3, Django 3.0, Bootstrap 4, CSS3 and HTML 5
+**Technologies Used:** 
+* Python 3.8.3, Django 3.0, Bootstrap 4, CSS3 and HTML 5
 
 **Future Improvement:**
 1. There should be a feature where you can create and login to your account.
