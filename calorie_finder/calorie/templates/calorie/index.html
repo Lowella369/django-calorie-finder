@@ -1,68 +1,66 @@
 {% extends 'calorie/base.html' %}
 {% block content %}
 {% if search_result %}
- {% if search_result == False %}  
+  {% if search_result.success == False %}
   <p class="message"> {{ search_result.message }}</p>
- {% else %}
+  {% else %}
   <div class="container">
-   <div class="row">
-    <div class="col-sm">
-     <div class="col-sm-6">
-      <div class="image">
-       <img src="{{ search_result.img.highres }}" alt="{{ search_result.name }}" class="img img-responsive full-width"/>
-      </div>
-     </div>
-     <p> {{ search_result.name }}</p>
-    </div>
-    <div class="col-md">
-     <div class="info-label">Nutrition Label</div>
-      <div class="nutri-row">
-       <div class="row">
-        <div class="col-8 col-sm-6">Serving Size: {{ search_result.serving_qty }} {{ search_result.serving_unit }}</div>
-       </div>
-       <div class="row">
-        <div class="col-8 col-sm-6">Calories</div>
-        <div class="col-4 col-sm-6">{{ search_result.calories }}</div>
-       </div> 
-       <div class="row">
-        <div class="col-8 col-sm-6"></div>
-        <div class="col-4 col-sm-6">% Daily Value</div>
-       </div>
-       <div class="row">
-        <div class="col-8 col-sm-6">Total Fat {{ search_result.total_fat }}</div>
-        <div class="col-4 col-sm-6">{{ search_result.fat_daily_percent }}</div>
-       </div>
-       <div class="row">
-        <div class="col-8 col-sm-6">Saturated Fat: {{ search_result.sat_fat }}</div>
-        <div class="col-4 col-sm-6">{{ search_result.sat_fat_daily_percent }}</div>
-       </div>
-       <div class="row">
-        <div class="col-8 col-sm-6">Cholesterol: {{ search_result.cholesterol }}</div>
-        <div class="col-4 col-sm-6">{{ search_result.cholesterol_daily_percent }}</div>
-       </div>
-       <div class="row">
-        <div class="col-8 col-sm-6">Sodium: {{ search_result.sodium }}</div>
-        <div class="col-4 col-sm-6">{{ search_result.sodium_daily_percent }}</div>
-       </div>
-       <div class="row">
-        <div class="col-8 col-sm-6">Total Carbohydrate: {{ search_result.total_carbohydrate }}</div>
-        <div class="col-4 col-sm-6">{{ search_result.carbs_daily_percent }}</div>
-       </div>
-       <div class="row">
-        <div class="col-8 col-sm-6">Dietary Fiber: {{ search_result.dietary_fiber }}</div>
-        <div class="col-4 col-sm-6">{{ search_result.fiber_daily_percent }}</div>
-       </div>
-       <div class="row">
-        <div class="col-8 col-sm-6">Sugar: {{ search_result.sugar }}</div>
+    <div class="row row-container">
+      <div class="col-md-5">
+        <div class="col-sm-12 text-center food-name">{{ search_result.name | capfirst}}</div>
+        <div class="col-sm-12 ">
+          <div class="image">
+          <img src="{{ search_result.img.highres }}" alt="{{ search_result.name }}" alt="{{ search_result.name }}" class="img img-responsive full-width"/>
+         </div>
         </div>
-       <div class="row">
-        <div class="col-8 col-sm-6">Protein: {{ search_result.protein }}</div>
-       </div>
       </div>
-     </div>
+      <div class="col-md-7 nutri-container">
+        <div class="row  text-center">
+          <div class="col-sm-12 nutri-header">Nutrition Information</div>
+        </div>
+         <div class="row nutri-rows">
+          <div class="col-12 col-sm-12 font-weight-bold">Serving Size: <span class="nutri-value">{{ search_result.serving_qty }} {{ search_result.serving_unit }}</span></div>
+        </div>
+        <div class="row nutri-rows">
+          <div class="col-8 col-sm-6 font-weight-bold">Calories: </div>
+          <div class="col-4 col-sm-6 text-right font-weight-bold">{{ search_result.calories }}</div>
+        </div>
+        <div class="row nutri-rows">
+          <div class="col-12 col-sm-12 text-right font-weight-bold">% Daily Value</div>
+        </div>
+        <div class="row nutri-rows">
+          <div class="col-8 col-sm-9 font-weight-bold">Total Fat: <span class="nutri-value">{{ search_result.total_fat }}</span></div>
+          <div class="col-4 col-sm-3 text-right">{{ search_result.fat_daily_percent }} %</div>
+        </div>
+        <div class="row nutri-rows">
+          <div class="col-8 col-sm-9"><div class="nutri-value font-italic">Saturated Fat: <span class="nutri-value">{{ search_result.sat_fat }}</span></div></div>
+          <div class="col-4 col-sm-3 text-right">{{ search_result.sat_fat_daily_percent }} %</div>
+        </div>
+        <div class="row nutri-rows">
+          <div class="col-8 col-sm-9 font-weight-bold">Cholesterol: <span class="nutri-value">{{ search_result.cholesterol }}</span></div>
+          <div class="col-4 col-sm-3 text-right">{{ search_result.cholesterol_daily_percent }} %</div>
+        </div>
+        <div class="row nutri-rows">
+          <div class="col-8 col-sm-9 font-weight-bold">Sodium: <span class="nutri-value">{{ search_result.sodium }}</span></div>
+          <div class="col-4 col-sm-3 text-right">{{ search_result.sodium_daily_percent }} %</div>
+        </div>
+        <div class="row nutri-rows">
+          <div class="col-8 col-sm-9 font-weight-bold">Total Carbohydrate: <span class="nutri-value">{{ search_result.total_carbohydrate }}</span></div>
+          <div class="col-4 col-sm-3 text-right">{{ search_result.carbs_daily_percent }} %</div>
+        </div>
+        <div class="row nutri-rows">
+          <div class="col-8 col-sm-9"><div class="nutri-value font-italic">Dietary Fiber: <span class="nutri-value">{{ search_result.dietary_fiber }}</span></div></div>
+          <div class="col-4 col-sm-3 text-right">{{ search_result.fiber_daily_percent }} %</div>
+        </div>
+        <div class="row nutri-rows">
+          <div class="col-12 col-sm-12"><div class="nutri-value font-italic">Sugar: <span class="nutri-value">{{ search_result.sugar }}</span></div></div>
+        </div>
+        <div class="row nutri-rows">
+          <div class="col-12 col-sm-12 font-weight-bold">Protein: <span class="nutri-value">{{ search_result.protein }}</span></div>
+        </div>
+      </div>
     </div>
-   </div>
   </div>
- {% endif %}
+  {% endif %}
 {% endif %}
 {% endblock %}
