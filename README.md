@@ -13,8 +13,8 @@ Link:
 
 **Future Improvement:**
 1. There should be a feature where you can create and login to your account.
-2. There should be a feature where you should be able to save and pinned foods that you are interested in.
-3. There should be a dashboard where you will be able to see the lists of foods you are interested in.
+2. There should be a feature where you should be able to save and pinned foods that you are interested in and a dashboard where you can see it.
+3. The footer should keep at the bottom of the page even if the page contains a small amount of content or empty.
 
 **User Stories**
 1. As a health conscious person, I want to check the nutrition value of the food, so that I know I am eating healthy foods.
