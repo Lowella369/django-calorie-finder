@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Food_PercentValue(models.Model):
   food_name = models.CharField(max_length=100)
-  food_img = models.CharField(max-length=1000)
+  food_img = models.CharField(max_length=1000)
   food_serving_qty = models.IntegerField()
   food_serving_unit = models.CharField(max_length=100)
   food_calories = models.IntegerField()

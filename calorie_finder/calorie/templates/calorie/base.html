@@ -18,7 +18,7 @@
         <div class="searchText col-12 col-md-12">Check the calorie and nutrition value for any food</div>
         <div class="col-12 col-md-12">
           <!-- Search Form -->
-          <form action="index.html" method="POST" class="form-inline d-flex justify-content-center md-form form-sm mt-2">
+          <form action="" method="POST" class="form-inline d-flex justify-content-center md-form form-sm mt-2">
             {% csrf_token %}
             <div class="input-group col-sm-6">
               <input class="form-control py-2" type="search" name="food" placeholder="" id="search_input" required="required">
@@ -29,9 +29,9 @@
           </form>
         </div>
       </div>
+    </div>
       {% block content %}
       {% endblock %}
-    </div>
     <div class="footer">
       <p> Copyright Lowella Fox 2020</p>
     </div>
