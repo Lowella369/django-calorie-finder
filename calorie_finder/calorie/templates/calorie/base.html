@@ -1,37 +1,38 @@
 {% load static %}
 <!DOCTYPE html>
-<head>
-  <title>Calorie Finder</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="{% static 'css/style.css' %}" rel="stylesheet">
-</head>
-<body>
-<div class="search-box">
- <div class="row">
-  <div class="searchText col-12 col-md-12">Find nutrition value and calorie for any food</div>
- </div>
- <!-- Search Form-->
- <form action="" method="POST" class="form-inline d-flex justify-content-center md-form form-sm mt-2">
-  {% csrf_token %}
-  <div class="input-group col-sm-6">
-   <input class="form-control py-2" type="search" name="food" placeholder="" id="search_input" required="required">
-   <span class="input-group-append">
-    <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
-   </span>
-  </div>
- </form>
-</div>
- {% block content %}
- {% endblock %}
-</div>
-<div class="footer">
- <p>Copyright Lowella Fox 2020</p>
-</div>
-</body>
+  <head>
+    <title>Calorie Finder</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="search-box">
+      <div class="row">
+        <div class="searchText col-12 col-md-12">Check the calorie and nutrition value for any food</div>
+        <div class="col-12 col-md-12">
+          <!-- Search Form -->
+          <form action="index.html" method="POST" class="form-inline d-flex justify-content-center md-form form-sm mt-2">
+            {% csrf_token %}
+            <div class="input-group col-sm-6">
+              <input class="form-control py-2" type="search" name="food" placeholder="" id="search_input" required="required">
+              <span class="input-group-append">
+                <button class="btn btn-outline-secondary btn-style" type="submit"><i class="fa fa-search icon-style"></i></button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+      {% block content %}
+      {% endblock %}
+    </div>
+    <div class="footer">
+      <p> Copyright Lowella Fox 2020</p>
+    </div>
+  </body>
 </html>
