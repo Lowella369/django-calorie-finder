@@ -27,7 +27,7 @@ class FoodCalorieForm(forms.Form):
         'serving_qty': food_data['serving_qty'],
         'serving_unit': food_data['serving_unit'],
         'calories': food_data['nf_calories'],
-        'total_fata': food_data['nf_total_fat'],
+        'total_fat': food_data['nf_total_fat'],
         'sat_fat': food_data['nf_saturated_fat'],
         'cholesterol': food_data['nf_cholesterol'],
         'sodium': food_data['nf_sodium'],
@@ -42,8 +42,9 @@ class FoodCalorieForm(forms.Form):
         'sodium_daily_percent': round(food_data['nf_sodium'] / Food_PercentValue.rec_dailyValueSodium * 100, 2),
         'carbs_daily_percent': round(food_data['nf_total_carbohydrate'] / Food_PercentValue.rec_dailyValueCarbo * 100, 2),
         'fiber_daily_percent': round(food_data['nf_dietary_fiber'] / Food_PercentValue.rec_dailyValueFiber * 100, 2),
-        'sugar_daily_percent': "N/A",
+        'sugar_daily_percent': 0,
       }
+      print("context",context)
       return context
     else:
       result['success'] = False
