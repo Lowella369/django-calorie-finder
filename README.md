@@ -11,8 +11,7 @@
 1. User will enter the name of the food to the input box.
 2. Hit the submit button.
 3. Then the food's image and it's nutrition facts will be displayed on the page.
-
-**Please take note that you can only search one food name at a time.**
+* **Please take note that you can only search one food name at a time.**
 
 **Technologies Used:** 
 * Python 3.8.3, Django 3.0, Bootstrap 4, CSS3 and HTML 5
