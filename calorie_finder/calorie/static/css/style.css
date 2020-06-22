@@ -55,7 +55,7 @@ body {
 .nutri-header {
   text-align: center;
   font-size: 1.5rem;
-  font-weight: strong;
+  font-weight: bold;
   background-color: #358467;
   color: #e8e8e8;
   height: 2.8rem;
@@ -82,13 +82,6 @@ body {
   font-weight: normal;
   margin-left: 1rem;
 }
-.nutri-value {
-  font-weight: normal;
-  margin-left: 1rem;
-}
-.row-container {
-  padding: 0 2rem 2rem 2rem;
-}
 @media only screen and (min-width: 768px) {
   .search-box {
     margin-bottom: 4rem;
@@ -98,5 +91,8 @@ body {
   }
   .footer {
     margin-top: 4rem;
+  }
+  .row-container {
+    padding: 0 2rem 2rem 2rem;
   }
 }
