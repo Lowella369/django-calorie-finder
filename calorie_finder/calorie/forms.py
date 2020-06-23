@@ -2,7 +2,6 @@ from django import forms
 from django.conf import settings
 import requests
 from urllib.parse import urlencode
-from django.contrib import messages
 from calorie.models import Food_PercentValue
 
 class FoodCalorieForm(forms.Form):

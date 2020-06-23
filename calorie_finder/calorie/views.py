@@ -1,7 +1,5 @@
 from django.shortcuts import render
 from .forms import FoodCalorieForm
-from django.contrib import messages
-from django.http import JsonResponse
 from calorie.models import Food_PercentValue
 
 def index(request):
