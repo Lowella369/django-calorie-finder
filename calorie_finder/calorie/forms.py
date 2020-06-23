@@ -22,6 +22,7 @@ class FoodCalorieForm(forms.Form):
       result['success'] = True
       data = result['foods']
       food_data = data[0]
+      print("food data", food_data)
       context = {
         'name': food_data['food_name'],
         'img': food_data['photo'],
@@ -36,13 +37,13 @@ class FoodCalorieForm(forms.Form):
         'dietary_fiber': food_data['nf_dietary_fiber'],
         'sugar': food_data['nf_sugars'],
         'protein': food_data['nf_protein'],
-        'calories_daily_percent': round(food_data['nf_calories'] / Food_PercentValue.rec_calorieIntake * 100, 2),
-        'fat_daily_percent': round(food_data['nf_total_fat'] / Food_PercentValue.rec_dailyValueTotalFat * 100, 2),
-        'sat_fat_daily_percent': round(food_data['nf_saturated_fat'] / Food_PercentValue.rec_dailyValueSatFat * 100, 2),
-        'cholesterol_daily_percent': round(food_data['nf_cholesterol'] / Food_PercentValue.rec_dailyValueCholesterol * 100, 2),
-        'sodium_daily_percent': round(food_data['nf_sodium'] / Food_PercentValue.rec_dailyValueSodium * 100, 2),
-        'carbs_daily_percent': round(food_data['nf_total_carbohydrate'] / Food_PercentValue.rec_dailyValueCarbo * 100, 2),
-        'fiber_daily_percent': round(food_data['nf_dietary_fiber'] / Food_PercentValue.rec_dailyValueFiber * 100, 2),
+        'calories_daily_percent': round(float(0 if food_data['nf_calories'] is None else food_data['nf_calories']) / Food_PercentValue.rec_calorieIntake * 100, 2),
+        'fat_daily_percent': round(float(0 if food_data['nf_total_fat'] is None else food_data['nf_total_fat'])/ Food_PercentValue.rec_dailyValueTotalFat * 100, 2),
+        'sat_fat_daily_percent': round(float(0 if food_data['nf_saturated_fat'] is None else food_data['nf_saturated_fat']) / Food_PercentValue.rec_dailyValueSatFat * 100, 2),
+        'cholesterol_daily_percent': round(float(0 if food_data['nf_cholesterol'] is None else food_data['nf_cholesterol']) / Food_PercentValue.rec_dailyValueCholesterol * 100, 2),
+        'sodium_daily_percent': round(float(0  if food_data['nf_sodium'] is None else food_data['nf_sodium']) / Food_PercentValue.rec_dailyValueSodium * 100, 2),
+        'carbs_daily_percent': round(float(0 if food_data['nf_total_carbohydrate'] is None else food_data['nf_total_carbohydrate']) / Food_PercentValue.rec_dailyValueCarbo * 100, 2),
+        'fiber_daily_percent': round(float(0 if food_data['nf_dietary_fiber'] is None else food_data['nf_dietary_fiber']) / Food_PercentValue.rec_dailyValueFiber * 100, 2),
         'sugar_daily_percent': 0,
       }
       print("context",context)
@@ -53,6 +54,7 @@ class FoodCalorieForm(forms.Form):
         result['message'] = "%s" % food + " is not found in the API Database"
       else:
         result['message'] = "API Server is not available at the momenet. Try again Later."
+    print("response code", response.status_code)
     return result
 
 
