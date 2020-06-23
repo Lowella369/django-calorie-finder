@@ -29,27 +29,57 @@
           <div class="col-12 col-sm-12 text-right font-weight-bold">% Daily Value</div>
         </div>
         <div class="row nutri-rows">
-          <div class="col-8 col-sm-9 font-weight-bold">Total Fat: <span class="nutri-value">{{ search_result.total_fat }}g</span></div>
+          <div class="col-8 col-sm-9 font-weight-bold">Total Fat: <span class="nutri-value">
+            {% if search_result.total_fat == None %}
+              {{ search_result.total_fat }}
+            {% else %}
+              {{ search_result.total_fat }}g
+            {% endif %}</span></div>
           <div class="col-4 col-sm-3 text-right">{{ search_result.fat_daily_percent }} %</div>
         </div>
         <div class="row nutri-rows">
-          <div class="col-8 col-sm-9"><div class="nutri-value font-italic">Saturated Fat: <span class="nutri-value">{{ search_result.sat_fat }}g</span></div></div>
+          <div class="col-8 col-sm-9"><div class="nutri-value font-italic">Saturated Fat: <span class="nutri-value">
+            {% if search_result.sat_fat == None %}
+              {{ search_result.sat_fat }}
+            {% else %}
+              {{ search_result.sat_fat }}g
+            {% endif %}</span></div></div>
           <div class="col-4 col-sm-3 text-right">{{ search_result.sat_fat_daily_percent }} %</div>
         </div>
         <div class="row nutri-rows">
-          <div class="col-8 col-sm-9 font-weight-bold">Cholesterol: <span class="nutri-value">{{ search_result.cholesterol }}mg</span></div>
+          <div class="col-8 col-sm-9 font-weight-bold">Cholesterol: <span class="nutri-value">
+            {% if search_result.cholesterol == None %}
+              {{ search_result.cholesterol }}
+            {% else %}
+              {{ search_result.cholesterol }}mg
+            {% endif %}</span></div>
           <div class="col-4 col-sm-3 text-right">{{ search_result.cholesterol_daily_percent }} %</div>
         </div>
         <div class="row nutri-rows">
-          <div class="col-8 col-sm-9 font-weight-bold">Sodium: <span class="nutri-value">{{ search_result.sodium }}mg</span></div>
+          <div class="col-8 col-sm-9 font-weight-bold">Sodium: <span class="nutri-value">
+            {% if search_result.sodium == None %}
+              {{ search_result.sodium }}
+            {% else %}
+              {{ search_result.sodium }}mg
+            {% endif %}</span></div>
           <div class="col-4 col-sm-3 text-right">{{ search_result.sodium_daily_percent }} %</div>
         </div>
         <div class="row nutri-rows">
-          <div class="col-8 col-sm-9 font-weight-bold">Total Carbohydrate: <span class="nutri-value">{{ search_result.total_carbohydrate }}g</span></div>
+          <div class="col-8 col-sm-9 font-weight-bold">Total Carbohydrate: <span class="nutri-value">
+            {% if search_result.total_carbohydrate == None %}
+              {{ search_result.total_carbohydrate }}
+            {% else %}
+              {{ search_result.total_carbohydrate }}g
+            {% endif %}</span></div>
           <div class="col-4 col-sm-3 text-right">{{ search_result.carbs_daily_percent }} %</div>
         </div>
         <div class="row nutri-rows">
-          <div class="col-8 col-sm-9"><div class="nutri-value font-italic">Dietary Fiber: <span class="nutri-value">{{ search_result.dietary_fiber }}g</span></div></div>
+          <div class="col-8 col-sm-9"><div class="nutri-value font-italic">Dietary Fiber: <span class="nutri-value">
+            {% if search_result.dietary_fiber == None %}
+              {{search_result.dietary_fiber }}
+            {% else %}
+              {{ search_result.dietary_fiber }}g
+            {% endif %}</span></div></div>
           <div class="col-4 col-sm-3 text-right">{{ search_result.fiber_daily_percent }} %</div>
         </div>
         <div class="row nutri-rows">
