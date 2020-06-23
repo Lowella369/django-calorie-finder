@@ -1,5 +1,6 @@
 from django import forms
 from django.conf import settings
+from django.http import JsonResponse
 import requests
 from urllib.parse import urlencode
 from calorie.models import Food_PercentValue
@@ -15,6 +16,7 @@ class FoodCalorieForm(forms.Form):
     payload = urlencode({'query': food})
     response = requests.post(url, headers=headers, data=payload)
 
+    print("response status",response.status_code)
     if response.status_code== 200:
       result = response.json()
       result['success'] = True
@@ -47,7 +49,7 @@ class FoodCalorieForm(forms.Form):
       return context
     else:
       result['success'] = False
-      if response.status_code == 400:
+      if response.status_code == 404:
         result['message'] = "%s" % food + " is not found in the API Database"
       else:
         result['message'] = "API Server is not available at the momenet. Try again Later."
